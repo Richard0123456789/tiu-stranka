@@ -1,49 +1,163 @@
 <!DOCTYPE html>
 <html lang="sk">
 <head>
+    <meta charset="utf-8">
+    <title>Metal</title>
     <style>
         body {
-            background-color: gainsboro;
-            font-family: monospace;
+            background-color: #0d0d0d; /* Hlboké temné pozadie */
+            color: #e0e0e0; /* Svetlý text pre dobrú čitateľnosť */
+            font-family: 'Courier New', Courier, monospace;
             font-size: 16px;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
-        h1 {
-            color: darkred;
-        }
-        .ramecek {
-            border: 2px solid darkred;
-            padding: 15px;
+
+        header {
             text-align: center;
+            margin-bottom: 40px;
         }
-        /* Štýl na zarovnanie bodiek zoznamu k textu pri zarovnaní na stred */
+
+        h1 {
+            color: #cc0000; /* Výrazná temná červená */
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 10px rgba(204, 0, 0, 0.4);
+        }
+
+        header p {
+            color: #aaa;
+            font-size: 1.1rem;
+            margin: 5px 0;
+        }
+
+        /* Hlavný kontajner pre text a obrázok vedľa seba */
+        .content-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            max-width: 900px;
+            width: 100%;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .left-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .ramecek {
+            background-color: #161616;
+            border: 2px solid #8b0000; /* Tmavá krvavo červená */
+            padding: 25px;
+            text-align: left; /* Text v rámčeku vľavo */
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .ramecek h2 {
+            color: #cc0000;
+            margin-top: 0;
+            font-size: 1.3rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+        }
+
         .ramecek ul {
-            display: inline-block;
-            text-align: left;
-            margin: 0 auto;
+            margin: 0;
             padding-left: 20px;
         }
+
+        .ramecek li {
+            margin-bottom: 8px;
+        }
+
+        .info-text {
+            background-color: #161616;
+            padding: 15px 25px;
+            border-radius: 8px;
+            border-left: 4px solid #cc0000;
+            margin: 0;
+        }
+
+        .image-container {
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid #222;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.8);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+            border-color: #8b0000;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+        }
+
+        a {
+            color: #ff3333;
+            text-decoration: none;
+            border-bottom: 1px dashed #ff3333;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #ff6666;
+            border-bottom-style: solid;
+        }
+
+        /* Responsívnosť pre menšie obrazovky (telefóny) */
+        @media (max-width: 768px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
-  <meta charset="utf-8">
-  <title>Metal</title>
 </head>
 <body>
 
-  <h1>Metal</h1>
-  <p>Táto stránka je o metale</p>
+    <header>
+        <h1>Metal</h1>
+        <p>Táto stránka je o metale</p>
+    </header>
 
-  <p>Túto tému som si vybral lebo milujem metal</p>
+    <div class="content-grid">
+        <div class="left-column">
+            <p class="info-text">Túto tému som si vybral, lebo milujem metal.</p>
 
-  <div class="ramecek">
-      <h2>Čo bude na tejto stránke?</h2>
-      <ul>
-          <li>Žánre</li>
-          <li>Najlepšie kapely zo žánrov/sub-žárnov</li>
-          <li>História metalu</li>
-      </ul>
-  </div>
+            <div class="ramecek">
+                <h2>Čo bude na tejto stránke?</h2>
+                <ul>
+                    <li>Žánre</li>
+                    <li>Najlepšie kapely zo žánrov / subžánrov</li>
+                    <li>História metalu</li>
+                </ul>
+            </div>
 
-  <p>Viac je na <a href="https://en.wikipedia.org/wiki/Heavy_metal_music">Wikipédii</a>.</p>
+            <p style="font-size: 0.95rem;">Viac informácií nájdeš na <a href="https://en.wikipedia.org/wiki/Heavy_metal_music" target="_blank">Wikipédii</a>.</p>
+        </div>
 
-  <img src="https://imgs.search.brave.com/Z6zTFCA9MD4BDmFjSF_PRwVWBIGYFHMc0F6ipkAqW6U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bnVjbGVhcmJsYXN0/LmNvbS9jZG4vc2hv/cC9maWxlcy9JbW1v/cnRhbF8tX1dhcl9B/Z2FpbnN0X0FsbC5q/cGc_dj0xNzA3ODE5/Njk0JndpZHRoPTMz/MA" alt="obrázok kapely Immortal">
+        <div class="image-container">
+            <img src="https://imgs.search.brave.com/Z6zTFCA9MD4BDmFjSF_PRwVWBIGYFHMc0F6ipkAqW6U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly93d3cu/bnVjbGVhcmJsYXN0/LmNvbS9jZG4vc2hv/cC9maWxlcy9JbW1v/cnRhbF8tX1dhcl9B/Z2FpbnN0X0FsbC5q/cGc_dj0xNzA3ODE5/Njk0JndpZHRoPTMz/MA" alt="obrázok kapely Immortal">
+        </div>
+    </div>
+
 </body>
 </html>
